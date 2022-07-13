@@ -1,0 +1,152 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    font-family:'Helvetica Neue';
+    background-color:#f4f4f5;  
+    flex-direction: column;  
+}
+
+@keyframes apearFromRight{
+    to{
+        transform:translateX(-5%);
+    }
+}
+
+@keyframes dissappear{
+    from{
+        opacity:1;
+    }
+    to{
+        opacity:0;
+    }
+}
+.toast-wrap{
+    width:300px;
+    position:fixed;
+    right:0;
+}
+
+.toast{
+    transform:translateX(100%);
+    margin:auto;
+    display:flex;
+    border:0.5px solid transparent;
+    padding:9px;
+    min-width:300px;
+    min-height: 60px;
+    background-color:rgb(255, 255, 255);
+    font-weight: 200;
+    border-radius:4px;
+    animation:apearFromRight ease 3s;
+    
+}
+
+.toast-icon{
+    margin:10px 0 0 9px;
+}
+
+.toast__body{
+    min-width: 243px;
+    margin-left:6px;
+    line-height: 33px;
+}
+
+.toast__title{
+    font-weight: 600;
+}
+
+.toast_content{
+
+}
+
+.toast__title,
+.toast_content{
+    margin-left:16px;
+}
+
+.toast__close{
+    padding:4px;
+    width:23px;
+    height:23px;
+    border-radius:50%;
+  
+}
+
+.toast__close:hover{
+    background-color:rgb(241, 241, 241);
+}
+
+.toast__close-icon{
+    /* display:block; */
+    margin-left:2px;
+}
+
+.toast--success{
+    border-left: 6px solid rgb(8, 169, 8);
+    padding:0;
+}
+
+.toast--success .toast-icon{
+    color:rgb(8, 169, 8);
+}
+
+.toast--failure{
+    border-left: 6px solid rgb(209, 0, 0);
+    padding:0;
+}
+
+.toast--failure .toast-icon{
+   color: rgb(209, 0, 0);
+}
+
+.control{
+    margin:auto;
+    display:flex;
+    flex-direction: row;
+}
+
+.btn {
+    margin:30px;
+    min-width:150px;
+    min-height:34px;
+    border-radius:1px solid #ccc;
+    border-radius:50px;
+    color:white;
+    font-size:18px;
+    font-weight:100;
+    text-align: center;
+    line-height:34px;
+    cursor:pointer
+}
+
+.btn:active{
+    animation: upDown linear .5s;
+}
+
+@keyframes upDown {
+    from {
+        transform : translateY(0);
+        
+    }
+    to{
+        transform: translateY(10%);
+        box-shadow:20px 20px 50px 15px grey;
+    }
+}
+
+.btn-success{
+    background-image: linear-gradient(to left,rgba(0, 0, 0, 0.3), rgb(0, 242, 0));
+    background-color:rgb(0, 242, 0);
+
+}
+.btn-failure{
+    background-image: linear-gradient(to left,rgba(0, 0, 0, 0.3), #f84b2f);
+    background-color:  #f84b2f;
+
+}
